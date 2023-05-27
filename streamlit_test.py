@@ -11,7 +11,7 @@ import openpyxl
 #path = "C:\\Users\\tapan\\OneDrive\\Desktop\\qrbot\\"
 
 
-import cv2
+#import cv2
 
 st.title('Welcome to QR code coder decoder')
 polltime=2
