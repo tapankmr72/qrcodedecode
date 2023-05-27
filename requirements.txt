@@ -3,4 +3,4 @@ qrcode
 openpyxl
 opencv-contrib-python-headless
 pyzbar==0.1.8
-libzbar-dev
+zbar
