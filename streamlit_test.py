@@ -4,7 +4,7 @@ from datetime import datetime,timedelta
 import json
 import urllib.request
 import requests
-from pyzbar.pyzbar import decode
+#from pyzbar.pyzbar import decode
 import qrcode
 import openpyxl
 
