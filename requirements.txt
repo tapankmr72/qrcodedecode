@@ -2,6 +2,6 @@ streamlit
 qrcode
 openpyxl
 opencv-contrib-python-headless
-libzbar-dev
-zbar-devel
+libzbar-dev -y
+zbar-devel -y
 pyzbar
