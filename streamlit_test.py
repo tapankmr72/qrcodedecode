@@ -224,8 +224,9 @@ while looper==0:
                text=""
                img = cv2.imread("decoded"+mime)
                result = reader.decode(img)
-               for i in result:
-                   text = (i.data.decode("utf-8"))
+               text=result
+                #for i in result:
+                 #  text = (i.data.decode("utf-8"))
 
                if text!="":
                  print(text)
