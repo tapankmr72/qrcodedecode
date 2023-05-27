@@ -319,7 +319,7 @@ while looper==0:
           img = qrcode.make(messagetext)
           img.save("qrcode.jpg")
 
-          file = r"C:\Users\tapan\OneDrive\Desktop\qrbot\qrcode.jpg"
+          file =qrcode.jpg"
 
           files = {'photo': open(file, 'rb')}
           response = requests.post(photourl + "?chat_id={}".format(numbertext), files=files)
