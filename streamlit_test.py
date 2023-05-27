@@ -4,14 +4,10 @@ from datetime import datetime,timedelta
 import json
 import urllib.request
 import requests
-#from pyzbar.pyzbar import decode
+from pyzbar.pyzbar import decode
 import qrcode
 import openpyxl
-import zxing
-reader = zxing.BarCodeReader()
 #path = "C:\\Users\\tapan\\OneDrive\\Desktop\\qrbot\\"
-
-
 import cv2
 
 st.title('Welcome to QR code coder decoder')
@@ -222,11 +218,10 @@ while looper==0:
 
            if mime==".jpg" or mime==".png" or mime==".jpeg" or mime==".bmp" or mime==".webp":
                text=""
-               img = "decoded"+mime
-               result = reader.decode(img)
-               text=result
-                #for i in result:
-                 #  text = (i.data.decode("utf-8"))
+               img = cv2.imread("decoded"+mime)
+               result = decode(img)
+               for i in result:
+                  text = (i.data.decode("utf-8"))
 
                if text!="":
                  print(text)
