@@ -7,7 +7,8 @@ import requests
 from pyzbar.pyzbar import decode
 import qrcode
 import openpyxl
-
+import zxing
+reader = zxing.BarCodeReader()
 #path = "C:\\Users\\tapan\\OneDrive\\Desktop\\qrbot\\"
 
 
@@ -222,7 +223,7 @@ while looper==0:
            if mime==".jpg" or mime==".png" or mime==".jpeg" or mime==".bmp" or mime==".webp":
                text=""
                img = cv2.imread("decoded"+mime)
-               result = decode(img)
+               result = reader.decode(img)
                for i in result:
                    text = (i.data.decode("utf-8"))
 
