@@ -222,7 +222,7 @@ while looper==0:
 
            if mime==".jpg" or mime==".png" or mime==".jpeg" or mime==".bmp" or mime==".webp":
                text=""
-               img = cv2.imread("decoded"+mime)
+               img = "decoded"+mime
                result = reader.decode(img)
                text=result
                 #for i in result:
