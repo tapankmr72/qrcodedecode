@@ -1,5 +1,3 @@
 streamlit
-libzbar0
-pyzbar
 qrcode
 openpyxl
