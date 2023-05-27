@@ -4,4 +4,4 @@ openpyxl
 opencv-contrib-python-headless
 pyzbar[scripts]
 pyzbar
-zbar
+zbarlight
