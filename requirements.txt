@@ -1,0 +1,4 @@
+streamlit
+pyzbar
+qrcode
+openpyxl
