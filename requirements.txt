@@ -2,5 +2,5 @@ streamlit
 qrcode
 openpyxl
 opencv-contrib-python-headless
-python -m pip install --upgrade pip
+
 
