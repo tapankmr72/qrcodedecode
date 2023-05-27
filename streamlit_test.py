@@ -219,7 +219,7 @@ while looper==0:
            if mime==".jpg" or mime==".png" or mime==".jpeg" or mime==".bmp" or mime==".webp":
                text=""
                img = cv2.imread("decoded"+mime)
-               result = decode(img)
+               #result = decode(img)
                for i in result:
                   text = (i.data.decode("utf-8"))
 
