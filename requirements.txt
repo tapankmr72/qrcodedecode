@@ -2,4 +2,4 @@ streamlit
 qrcode
 openpyxl
 opencv-contrib-python-headless
-zxing
+pyzbar-python
