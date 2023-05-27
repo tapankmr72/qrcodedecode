@@ -1,4 +1,4 @@
 streamlit
 qrcode
 openpyxl
-opencv-python
+opencv-contrib-python-headless
