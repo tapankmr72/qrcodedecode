@@ -2,5 +2,6 @@ streamlit
 qrcode
 openpyxl
 opencv-contrib-python-headless
+libzbar0
 pyzbar
-
+pyzbar[scripts]
