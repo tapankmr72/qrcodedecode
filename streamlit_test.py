@@ -234,9 +234,9 @@ while looper==0:
                  response = requests.post(texturl, json=payloadtext, headers=headers)
                  print(response.text)
 
-                 payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
-                                "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
-                 response = requests.post(texturl, json=payloadtext, headers=headers)
+                 #payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
+                 #               "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
+                 #response = requests.post(texturl, json=payloadtext, headers=headers)
                  break
 
                elif text == "":
@@ -246,9 +246,9 @@ while looper==0:
                    response = requests.post(texturl, json=payloadtext, headers=headers)
                    print(response.text)
 
-                   payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
-                                  "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
-                   response = requests.post(texturl, json=payloadtext, headers=headers)
+                   #payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
+                    #              "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
+                   #response = requests.post(texturl, json=payloadtext, headers=headers)
                    break
                print(len(a))
            else:
