@@ -4,7 +4,8 @@ from datetime import datetime,timedelta
 import json
 import urllib.request
 import requests
-from pyzbar.pyzbar import decode
+import zxingcpp
+import numpy
 import qrcode
 import openpyxl
 #path = "C:\\Users\\tapan\\OneDrive\\Desktop\\qrbot\\"
@@ -219,9 +220,13 @@ while looper==0:
            if mime==".jpg" or mime==".png" or mime==".jpeg" or mime==".bmp" or mime==".webp":
                text=""
                img = cv2.imread("decoded"+mime)
-               result = decode(img)
-               for i in result:
-                  text = (i.data.decode("utf-8"))
+               np_arr = numpy.array(img)
+               #result = decode(img)
+               result = zxingcpp.read_barcodes(np_arr)
+               #for i in result:
+               #    text = (i.data.decode("utf-8"))
+               for r in result:
+                   text=r.text
 
                if text!="":
                  print(text)
