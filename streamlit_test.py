@@ -314,9 +314,9 @@ while looper==0:
               response = requests.post(texturl, json=payloadtext, headers=headers)
               print(response.text)
 
-              payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
-                             "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
-              response = requests.post(texturl, json=payloadtext, headers=headers)
+             # payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
+                            # "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
+              #response = requests.post(texturl, json=payloadtext, headers=headers)
               break
           img = qrcode.make(messagetext)
           img.save("qrcode.jpg")
@@ -327,9 +327,9 @@ while looper==0:
           response = requests.post(photourl + "?chat_id={}".format(numbertext), files=files)
           print(response.text)
 
-          payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
-                         "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
-          response = requests.post(texturl, json=payloadtext, headers=headers)
+          #payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
+                       #  "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
+          #response = requests.post(texturl, json=payloadtext, headers=headers)
           break
        tempstr = tempstr[endpos1+4 :lenc]
 
