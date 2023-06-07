@@ -19,7 +19,7 @@ replyto="5560841599"
 looper=0
 message = ""
 updatetext1=0
-token="6158093548:AAEw6MXroTQMxxPGc6gqvgzSh5D0j3Jbm3Q"
+token="5626202224:AAHmy4cGAAei0gJ_jdBy6-ZBQbP_gY8yao8"
 headers = {"accept": "application/json","content-type": "application/json"}
 photourl="https://api.telegram.org/bot"+token+"/sendPhoto"
 texturl="https://api.telegram.org/bot"+token+"/sendMessage"
@@ -30,7 +30,8 @@ filedownload="https://api.telegram.org/file/bot"+token+"/"
 fileurl="https://api.telegram.org/bot"+token+"/getfile"
 healthmessage="This is health message of QR coder/Decoder BOT. It is running fine and you are receiving this message every 5 minutes "
 healthtime = int(time.time())
-advertise1 = "Get Your Free Personal Assistant- Eazyai is all in one AI powered Personal Assistant which can create SEO-optimized and unique content for your blogs, ads, emails and website 10X faster, generate Images, convert Text to Speech and Speech to Text and enable you to interact with customized AI Chat Bots to save your precious time and resources. https://eazyai.io"
+advertise1 = "AI-assisted content writing is the future and you can earn 10X using AI. To know more visit https://eazyai.io/blog/77/ai-assisted-content-writing-future"
+#advertise1 = "Get Your Free Personal Assistant- Eazyai is all in one AI powered Personal Assistant which can create SEO-optimized and unique content for your blogs, ads, emails and website 10X faster, generate Images, convert Text to Speech and Speech to Text and enable you to interact with customized AI Chat Bots to save your precious time and resources. https://eazyai.io"
 
 #advertise1 = "Visit https://tapanaitools.com to find free AI enabled seo tools to make your life easy "
 #advertise1 = "Earn daily income through revolutionary Telegram AI bot that generates up to 10% with UTBAI token:"+"\nhttps://t.me/unitedtelebot?start=5779577400"
@@ -235,9 +236,9 @@ while looper==0:
                  response = requests.post(texturl, json=payloadtext, headers=headers)
                  print(response.text)
 
-                 #payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
-                 #               "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
-                 #response = requests.post(texturl, json=payloadtext, headers=headers)
+                 payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
+                                "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
+                 response = requests.post(texturl, json=payloadtext, headers=headers)
                  break
 
                elif text == "":
@@ -247,9 +248,9 @@ while looper==0:
                    response = requests.post(texturl, json=payloadtext, headers=headers)
                    print(response.text)
 
-                   #payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
-                    #              "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
-                   #response = requests.post(texturl, json=payloadtext, headers=headers)
+                   payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
+                                 "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
+                   response = requests.post(texturl, json=payloadtext, headers=headers)
                    break
                print(len(a))
            else:
@@ -321,9 +322,9 @@ while looper==0:
               response = requests.post(texturl, json=payloadtext, headers=headers)
               print(response.text)
 
-             # payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
-                            # "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
-              #response = requests.post(texturl, json=payloadtext, headers=headers)
+              payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
+                             "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
+              response = requests.post(texturl, json=payloadtext, headers=headers)
               break
           img = qrcode.make(messagetext)
           img.save("qrcode.jpg")
@@ -334,9 +335,9 @@ while looper==0:
           response = requests.post(photourl + "?chat_id={}".format(numbertext), files=files)
           print(response.text)
 
-          #payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
-                       #  "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
-          #response = requests.post(texturl, json=payloadtext, headers=headers)
+          payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
+                         "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
+          response = requests.post(texturl, json=payloadtext, headers=headers)
           break
        tempstr = tempstr[endpos1+4 :lenc]
 
