@@ -23,6 +23,7 @@ token="6158093548:AAEw6MXroTQMxxPGc6gqvgzSh5D0j3Jbm3Q"
 headers = {"accept": "application/json","content-type": "application/json"}
 photourl="https://api.telegram.org/bot"+token+"/sendPhoto"
 texturl="https://api.telegram.org/bot"+token+"/sendMessage"
+docurl="https://api.telegram.org/bot"+token+"/sendDocument"
 meurl ="https://api.telegram.org/bot"+token+"/getMe"
 pollurl="https://api.telegram.org/bot"+token+"/getUpdates"
 filedownload="https://api.telegram.org/file/bot"+token+"/"
@@ -302,7 +303,13 @@ while looper==0:
                     response = requests.post(texturl, json=payloadtext, headers=headers)
                     break
                 roww = roww + 1
+          if messagetext=="sendfile":
+              file ="user1.xlsx"
 
+              files = {'document': open(file, 'rb')}
+              response = requests.post(docurl + "?chat_id={}".format(numbertext), files=files)
+              print(response.text)
+              break
           spcfind=messagetext.find("entities")
           if spcfind!=-1:
              messagetext=messagetext[0:spcfind-4]
