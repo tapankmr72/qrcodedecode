@@ -33,7 +33,7 @@ advertise1 = "Get Your Free Personal Assistant- Eazyai is all in one AI powered 
 
 #advertise1 = "Visit https://tapanaitools.com to find free AI enabled seo tools to make your life easy "
 #advertise1 = "Earn daily income through revolutionary Telegram AI bot that generates up to 10% with UTBAI token:"+"\nhttps://t.me/unitedtelebot?start=5779577400"
-#advertise=advertise1
+advertise=advertise1
 #advertise= "Visit https://tapanaitools.com to find more such tools to make your life easy "
 
 user = "user1.xlsx"
