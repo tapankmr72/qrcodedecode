@@ -10,7 +10,7 @@ import qrcode
 import openpyxl
 #path = "C:\\Users\\tapan\\OneDrive\\Desktop\\qrbot\\"
 import cv2
-
+#hello
 st.title('Welcome to QR code coder decoder')
 polltime=2
 pollgap=2
