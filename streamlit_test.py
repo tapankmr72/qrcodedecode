@@ -35,7 +35,7 @@ advertise = "Get Your Free Personal Assistant and earn 10X more- Eazyai is all i
 
 #advertise1 = "Visit https://tapanaitools.com to find free AI enabled seo tools to make your life easy "
 
-#advertise=advertise1
+advertise1=advertise
 #advertise= "Visit https://tapanaitools.com to find more such tools to make your life easy "
 
 user = "user1.xlsx"
