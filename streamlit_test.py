@@ -1,4 +1,3 @@
-import abcpy
 import streamlit as st
 import time
 from datetime import datetime,timedelta
@@ -20,7 +19,7 @@ replyto="5560841599"
 looper=0
 message = ""
 updatetext1=0
-token="5626202224:AAHmy4cGAAei0gJ_jdBy6-ZBQbP_gY8yao8"
+#token="5626202224:AAHmy4cGAAei0gJ_jdBy6-ZBQbP_gY8yao8"
 headers = {"accept": "application/json","content-type": "application/json"}
 photourl="https://api.telegram.org/bot"+token+"/sendPhoto"
 texturl="https://api.telegram.org/bot"+token+"/sendMessage"
