@@ -8,7 +8,7 @@ import zxingcpp
 import numpy
 import qrcode
 import openpyxl
-#path = "C:\\Users\\tapan\\OneDrive\\Desktop\\qrbot\\"
+#path = ""
 import cv2
 #helloa
 st.title('Welcome to QR code coder decoder')
@@ -19,7 +19,7 @@ replyto="5560841599"
 looper=0
 message = ""
 updatetext1=0
-token="5626202224:AAHmy4cGAAei0gJ_jdBy6-ZBQbP_gY8yao8"
+#token="5626202224:AAHmy4cGAAei0gJ_jdBy6-ZBQbP_gY8yao8"
 headers = {"accept": "application/json","content-type": "application/json"}
 photourl="https://api.telegram.org/bot"+token+"/sendPhoto"
 texturl="https://api.telegram.org/bot"+token+"/sendMessage"
