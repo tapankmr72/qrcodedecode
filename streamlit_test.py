@@ -1,17 +1,14 @@
-import streamlit as st
 import time
 from datetime import datetime,timedelta
 import json
 import urllib.request
 import requests
-import zxingcpp
-import numpy
 import qrcode
 import openpyxl
-#path = ""
+import zxingcpp
+import numpy
 import cv2
-#helloa
-st.title('Welcome to QR code coder decoder')
+path = ""
 polltime=2
 pollgap=2
 u2=""
@@ -19,33 +16,32 @@ replyto="5560841599"
 looper=0
 message = ""
 updatetext1=0
-#token="5626202224:AAHmy4cGAAei0gJ_jdBy6-ZBQbP_gY8yao8"
+token="5626202224:AAHmy4cGAAei0gJ_jdBy6-ZBQbP_gY8yao8"
 headers = {"accept": "application/json","content-type": "application/json"}
 photourl="https://api.telegram.org/bot"+token+"/sendPhoto"
-texturl="https://api.telegram.org/bot"+token+"/sendMessage"
 docurl="https://api.telegram.org/bot"+token+"/sendDocument"
+texturl="https://api.telegram.org/bot"+token+"/sendMessage"
 meurl ="https://api.telegram.org/bot"+token+"/getMe"
 pollurl="https://api.telegram.org/bot"+token+"/getUpdates"
 filedownload="https://api.telegram.org/file/bot"+token+"/"
 fileurl="https://api.telegram.org/bot"+token+"/getfile"
 healthmessage="This is health message of QR coder/Decoder BOT. It is running fine and you are receiving this message every 5 minutes "
 healthtime = int(time.time())
-advertise1 = "AI-assisted content writing is the future and you can earn 10X using AI. To know more visit https://eazyai.io/blog/77/ai-assisted-content-writing-future"
-advertise = "Get Your Free Personal Assistant and earn 10X more- Eazyai is all in one AI powered Personal Assistant which can create SEO-optimized and unique content for your blogs, ads, emails and website 10X faster, generate Images, convert Text to Speech and Speech to Text and enable you to interact with customized AI Chat Bots to save your precious time and resources. https://eazyai.io"
+advertise1c = "Say Hello to AI - Eazyai is all in one AI powered Personal Assistant which can create SEO-optimized and unique content for your blogs, ads, emails and website 10X faster, generate Images, convert Text to Speech and Speech to Text and enable you to interact with customized AI Chat Bots to save your precious time and resources. https://eazyai.io"
+advertise1d="Say Hello to your personal AI assistant which creates SEO-optimized and unique content for your blogs, ads, emails and website , generate Images, convert Text to Speech and Speech to Text and do other tasks easily and 10X faster. Chat with customized AI Chat Bots for your specific queries and save your precious hours. visit https://eazyai.io/ and unleash the power of AI "
+advertise1e = "Want free SEO tools without any ads? Visit https://tapanaitools.com/ and find lots of other free stuffs to make your life easy "
+advertise = "Be 10X more Productive by using AI powered Personal Assistant which can create SEO-optimized and unique content for your blogs, ads, emails and website 10X faster, generate Images, convert Text to Speech and Speech to Text and enable you to interact with customized AI Chat Bots to save your precious time and resources. https://eazyai.io"
+advertise1a="Ziply is the only unlimted  URL shortener service on Telegram. No more Long and clumsy URL's or Weblinks to share. Just go to @urlshortener_t_bot or \nhttps://t.me/urlshortener_t_bot and get your links shortened instantly"
+advertise1 = "AI based Colorization is a absolute magic. If you have old Black and White Images, Vibrant Heritage will color it for free. Visit us on X(formerly Twitter) at: \nhttps://twitter.com/Vi_Heritage and send photo/image as Direct Message"
 
-#advertise1 = "Visit https://tapanaitools.com to find free AI enabled seo tools to make your life easy "
-
-advertise1=advertise
-#advertise= "Visit https://tapanaitools.com to find more such tools to make your life easy "
-
-user = "user1.xlsx"
+user = path + "user1.xlsx"
 wb_obj = openpyxl.load_workbook(user)
 sheet_obj = wb_obj.active
 while looper==0:
     cn = 0
     mime=""
     messagelink = ""
-    updatefile = open("updateid.txt", 'r+')
+    updatefile = open(path + "updateid.txt", 'r+')
     updatetext = updatefile.read()
     updatefile.close()
     #Starting Long Polling
@@ -173,7 +169,7 @@ while looper==0:
            alert1 = "<a href='tg://user?id=" + numbertext + "'>Click to chat here</a>"
            if usernametext!="":
                alert1=alert1+"\n\nor "+"@"+usernametext
-           payloadtext = {"text": alert + alert1, "parse_mode": "html", "disable_web_page_preview": False,
+           payloadtext = {"text": alert , "parse_mode": "html", "disable_web_page_preview": False,
                           "disable_notification": False, "reply_to_message_id": None, "chat_id": replyto}
            response = requests.post(texturl, json=payloadtext, headers=headers)
            u2 = u1
@@ -198,15 +194,6 @@ while looper==0:
              wb_obj.save(user)
              break
            roww1=roww1+1
-       # userfile = open(path + "user.txt", 'r',encoding='utf-8', errors='ignore')
-       # usertext=userfile.read()
-       # userfile.close
-       # find1=usertext.find(numbertext)
-       # if find1==-1:
-       #  userfile = open(path + "user.txt", 'a' ,encoding='utf-8', errors='ignore')
-       #  userfile.write(numbertext+","+datetext+","+u1+"\n")
-       #  userfile.close()
-
        if messagelink!="":
            payloadtext = {"text": messagelink, "parse_mode": "html",
                           "disable_web_page_preview": False,
@@ -216,21 +203,19 @@ while looper==0:
        if downloadlink != "":
            file_url = downloadlink
            r = requests.get(file_url, stream=True)
-           with open("decoded"+mime, 'wb') as f:
+           with open(path +"decoded"+mime, 'wb') as f:
                f.write(r.content)
 
            if mime==".jpg" or mime==".png" or mime==".jpeg" or mime==".bmp" or mime==".webp":
                text=""
-               img = cv2.imread("decoded"+mime)
+               img = cv2.imread(path +"decoded"+mime)
                np_arr = numpy.array(img)
-               #result = decode(img)
-               result = zxingcpp.read_barcodes(np_arr)
-               #for i in result:
-               #    text = (i.data.decode("utf-8"))
-               for r in result:
-                   text=r.text
 
-               if text!="":
+               result = zxingcpp.read_barcodes(np_arr)
+
+               for r in result:
+                   text = r.text.replace("\\n", "\n")
+               if text != "":
                  print(text)
                  payloadtext = {"text": text,"disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
                  response = requests.post(texturl, json=payloadtext, headers=headers)
@@ -249,7 +234,7 @@ while looper==0:
                    print(response.text)
 
                    payloadtext = {"text": advertise, "parse_mode": "html", "disable_web_page_preview": False,
-                                 "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
+                                  "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
                    response = requests.post(texturl, json=payloadtext, headers=headers)
                    break
                print(len(a))
@@ -304,18 +289,20 @@ while looper==0:
                     response = requests.post(texturl, json=payloadtext, headers=headers)
                     break
                 roww = roww + 1
-          if messagetext=="sendfile":
-              file ="user1.xlsx"
 
+          if messagetext=="sendfile":
+              file = path+"user1.xlsx"
               files = {'document': open(file, 'rb')}
               response = requests.post(docurl + "?chat_id={}".format(numbertext), files=files)
               print(response.text)
               break
+
+
           spcfind=messagetext.find("entities")
           if spcfind!=-1:
              messagetext=messagetext[0:spcfind-4]
-          if len(messagetext)>2800:
-              message="Input Text must me less that 2800 charcters. Your text is of "+str(len(messagetext))+" characters"
+          if len(messagetext)>2000:
+              message="Input Text must me less that 2000 charcters. Your text is of "+str(len(messagetext))+" characters"
               payloadtext = {"text": len(messagetext), "parse_mode": "html",
                              "disable_web_page_preview": False,
                              "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
@@ -326,11 +313,16 @@ while looper==0:
                              "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
               response = requests.post(texturl, json=payloadtext, headers=headers)
               break
-          img = qrcode.make(messagetext)
-          img.save("qrcode.jpg")
-
-          file ="qrcode.jpg"
-
+          #messagetext=messagetext[0:100]
+          try:
+           img = qrcode.make(messagetext)
+           img.save(path + "qrcode.jpg")
+          except ValueError:
+              payloadtext = {"text": "QR code was not generated for given text. Please check and send valid text ", "parse_mode": "html", "disable_web_page_preview": False,
+                             "disable_notification": False, "reply_to_message_id": None, "chat_id": numbertext}
+              response = requests.post(texturl, json=payloadtext, headers=headers)
+              break
+          file = path + "qrcode.jpg"
           files = {'photo': open(file, 'rb')}
           response = requests.post(photourl + "?chat_id={}".format(numbertext), files=files)
           print(response.text)
@@ -340,10 +332,8 @@ while looper==0:
           response = requests.post(texturl, json=payloadtext, headers=headers)
           break
        tempstr = tempstr[endpos1+4 :lenc]
-
-
     if int(updatetext1)>=int(updatetext):
-      updatefile = open("updateid.txt", 'w')
+      updatefile = open(path + "updateid.txt", 'w')
       updatetext = int(updatetext1)+1
       updatefile.write(str(updatetext))
       updatefile.close()
@@ -351,6 +341,10 @@ while looper==0:
     healthtime1 = int(time.time())
     # print(healthtime1)
     if healthtime1 - healthtime > 1800:
+        file = path + "user1.xlsx"
+        files = {'document': open(file, 'rb')}
+        response = requests.post(docurl + "?chat_id={}".format(replyto), files=files)
+        print(response.text)
         payloadtext = {"text": healthmessage, "parse_mode": "html", "disable_web_page_preview": False,
                        "disable_notification": False, "reply_to_message_id": None, "chat_id": replyto}
         response = requests.post(texturl, json=payloadtext, headers=headers)
