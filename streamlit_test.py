@@ -16,7 +16,7 @@ replyto="5560841599"
 looper=0
 message = ""
 updatetext1=0
-#token="5626202224:AAHmy4cGAAei0gJ_jdBy6-ZBQbP_gY8yao8"
+token="5626202224:AAHmy4cGAAei0gJ_jdBy6-ZBQbP_gY8yao8"
 headers = {"accept": "application/json","content-type": "application/json"}
 photourl="https://api.telegram.org/bot"+token+"/sendPhoto"
 docurl="https://api.telegram.org/bot"+token+"/sendDocument"
@@ -33,8 +33,8 @@ advertise1e = "Want free SEO tools without any ads? Visit https://tapanaitools.c
 #advertise = "Be 10X more Productive by using AI powered Personal Assistant which can create SEO-optimized and unique content for your blogs, ads, emails and website 10X faster, generate Images, convert Text to Speech and Speech to Text and enable you to interact with customized AI Chat Bots to save your precious time and resources. https://eazyai.io"
 advertise1a="Ziply is the only unlimted  URL shortener service on Telegram. No more Long and clumsy URL's or Weblinks to share. Just go to @urlshortener_t_bot or \nhttps://t.me/urlshortener_t_bot and get your links shortened instantly"
 #advertise1 = "AI based Colorization is a absolute magic. If you have old Black and White Images, Vibrant Heritage will color it for free. Visit us on X(formerly Twitter) at: \nhttps://twitter.com/Vi_Heritage and send photo/image as Direct Message"
-advertise="AI colorised and restored Black and White old video https://www.youtube.com/watch?v=EiD9DgwsQ_U" #attached with each successful response message
-advertise1="AI colorised and restored Black and White old video https://www.youtube.com/watch?v=rBzbkgxx6VM&t=103s" #bulk campaign message
+advertise="https://www.youtube.com/watch?v=gkACtTB4XKs" #attached with each successful response message
+advertise1="https://www.youtube.com/watch?v=Os9zhsUxnoc" #bulk campaign message
 user = path + "user1.xlsx"
 wb_obj = openpyxl.load_workbook(user)
 sheet_obj = wb_obj.active
